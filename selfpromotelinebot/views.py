@@ -47,7 +47,6 @@ def callback(request):
             return HttpResponseBadRequest()
 
         for event in events:
-
             if isinstance(event, MessageEvent):
                 message = event.message.text
                 if message == 'hi':
@@ -87,7 +86,8 @@ def callback(request):
                         print(response.read().decode())
 
                     # line_bot_api.reply_message(reply_token, FlexSendMessage('work', contents=workFlexMessage))
-
+                    print(scoreDic)
+                    print(postbackArr)
                 # 點擊競賽經驗
                 elif data == 'competitionExp':
                     if 'competition' not in postbackArr:
@@ -103,8 +103,8 @@ def callback(request):
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
-
-                    # line_bot_api.reply_message(reply_token, FlexSendMessage('competition', contents=competitionFlexMessage))
+                    print(scoreDic)
+                    print(postbackArr)
 
                 # 點擊社團經驗
                 elif data == 'extracurricularExp':
@@ -121,7 +121,8 @@ def callback(request):
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
-
+                    print(scoreDic)
+                    print(postbackArr)
                     # line_bot_api.reply_message(reply_token, FlexSendMessage('extracurricular', contents=extracurricularFlexMessage))
 
                 # 點擊興趣
@@ -139,7 +140,8 @@ def callback(request):
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
-
+                    print(scoreDic)
+                    print(postbackArr)
                     # hobbyFlexMessage = json.load(open('selfpromotelinebot/returnTemplates/hobbyTemplate.json', encoding='utf-8'))
                     # line_bot_api.reply_message(reply_token, FlexSendMessage('hobby', contents=hobbyFlexMessage))
 
@@ -152,6 +154,7 @@ def callback(request):
                     # carousel
                     body = chooseFlexMessage
 
+                    # 用來判斷該項是否選過帥度
                     if scoreDic[responseCategory] > 0:
                         text_message = TextSendMessage(text='給過帥度了噢！')
                         line_bot_api.reply_message(reply_token, text_message)
@@ -162,6 +165,8 @@ def callback(request):
                     else:
                         scoreDic[responseCategory] = int(data[0])
                         postbackArr.remove(responseCategory)
+
+                        # 用來判斷是否選完帥度
                         if len(postbackArr) == 0 and all([x > 0 for x in scoreDic.values()]):
                             scoreArr = [x for x in scoreDic.values()]
                             totalScore = sum(scoreArr)
@@ -181,11 +186,16 @@ def callback(request):
                             postbackArr.append('competition')
                             postbackArr.append('extracurricular')
                             postbackArr.append('hobby')
+                            scoreDic['work'] = 0
+                            scoreDic['competition'] = 0
+                            scoreDic['extracurricular'] = 0
+                            scoreDic['hobby'] = 0
                         else:
                             connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
-
+                    print(scoreDic)
+                    print(postbackArr)
 
         return HttpResponse()
     else:
