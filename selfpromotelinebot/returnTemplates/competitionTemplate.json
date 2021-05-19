@@ -1,0 +1,218 @@
+{
+    "to": "U535c5da65995e2753c448f7191ea27ba",
+    "messages": [
+        {
+            "type": "flex",
+            "altText": "profile",
+            "contents": {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "icon",
+                                    "url": "https://imgur.com/bCsgw86.png"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "2020富達金融科技校園競賽",
+                                    "size": "md",
+                                    "contents": [],
+                                    "offsetBottom": "2px",
+                                    "offsetStart": "2px"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "第一名",
+                                    "size": "xs",
+                                    "offsetStart": "18.5px",
+                                    "offsetBottom": "3px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "提案內容",
+                                    "size": "xs",
+                                    "offsetStart": "15px",
+                                    "weight": "bold",
+                                    "margin": "5px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "- 利用linebot建立一個記帳機器人並結合",
+                                    "size": "xs",
+                                    "offsetStart": "18px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "line pay money來讓使用者可以每月定期",
+                                    "size": "xs",
+                                    "offsetStart": "18px",
+                                    "offsetBottom": "1px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "定額將資金小額投入富達基金中",
+                                    "size": "xs",
+                                    "offsetStart": "18px",
+                                    "offsetBottom": "1px"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "帥度。",
+                            "align": "center"
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "5px"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {
+                                    "type": "spacer",
+                                    "size": "xl"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "1"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "margin": "none",
+                                            "offsetEnd": "25px",
+                                            "offsetTop": "2.5px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "1competition",
+                                        "displayText": "1星1億ㄏㄏ"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "2"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "offsetTop": "2.5px",
+                                            "offsetEnd": "25px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "2competition",
+                                        "displayText": "聖人無2心，我是剩人"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "3"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "offsetTop": "2.5px",
+                                            "offsetEnd": "25px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "3competition",
+                                        "displayText": "3星2億ㄏㄏ"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "4"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "offsetTop": "2.5px",
+                                            "offsetEnd": "25px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "4competition",
+                                        "displayText": "四星good"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "5"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "offsetTop": "2.5px",
+                                            "offsetEnd": "25px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "data": "5competition",
+                                        "displayText": "5星吹吹吹！"
+                                    }
+                                }
+                            ],
+                            "paddingTop": "10px"
+                        }
+                    ]
+                },
+                "styles": {
+                    "footer": {
+                        "separator": false
+                    }
+                }
+            }
+        }
+    ]
+}

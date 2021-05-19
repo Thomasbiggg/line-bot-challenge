@@ -1,0 +1,204 @@
+{
+    "to": "U535c5da65995e2753c448f7191ea27ba",
+    "messages": [
+        {
+            "type": "flex",
+            "altText": "profile",
+            "contents": {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "帥度成績單",
+                            "weight": "bold",
+                            "color": "#1DB446",
+                            "size": "sm"
+                        },
+                        {
+                            "type": "text",
+                            "text": "郭永齊",
+                            "weight": "bold",
+                            "size": "xxl",
+                            "margin": "md"
+                        },
+                        {
+                            "type": "text",
+                            "text": "21歲米蟲大學生",
+                            "size": "xs",
+                            "color": "#aaaaaa",
+                            "wrap": true
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "xxl"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "margin": "xxl",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "工作經驗",
+                                            "size": "sm",
+                                            "color": "#555555",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "☆2.99",
+                                            "size": "sm",
+                                            "color": "#111111",
+                                            "align": "end"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "競賽經驗",
+                                            "size": "sm",
+                                            "color": "#555555",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "☆0.99",
+                                            "size": "sm",
+                                            "color": "#111111",
+                                            "align": "end"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "社團經驗",
+                                            "size": "sm",
+                                            "color": "#555555",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "☆3.33",
+                                            "size": "sm",
+                                            "color": "#111111",
+                                            "align": "end"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "興趣",
+                                            "size": "sm",
+                                            "color": "#555555",
+                                            "flex": 0
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "☆3.33",
+                                            "size": "sm",
+                                            "color": "#111111",
+                                            "align": "end"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "separator",
+                                    "margin": "xxl"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "星星加總",
+                                            "size": "sm",
+                                            "color": "#555555"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "☆7.31",
+                                            "size": "sm",
+                                            "color": "#111111",
+                                            "align": "end"
+                                        }
+                                    ],
+                                    "margin": "xxl"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "評語",
+                                            "size": "sm",
+                                            "color": "#555555"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "請加油。",
+                                            "size": "sm",
+                                            "color": "#111111",
+                                            "align": "end"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "xxl"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "margin": "md",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "TRANSCRIPT ID",
+                                    "size": "xs",
+                                    "color": "#aaaaaa",
+                                    "flex": 0
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "#",
+                                    "color": "#aaaaaa",
+                                    "size": "xs",
+                                    "align": "end"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "styles": {
+                    "footer": {
+                        "separator": true
+                    }
+                }
+            }
+        }
+    ]
+}

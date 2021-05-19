@@ -1,0 +1,76 @@
+{
+    "to": "U535c5da65995e2753c448f7191ea27ba",
+    "messages": [
+        {
+            "type": "flex",
+            "altText": "profile",
+            "contents": {
+                "type": "bubble",
+                "hero": {
+                    "type": "image",
+                    "url": "https://i.imgur.com/jQW4fs8.jpeg",
+                    "size": "full",
+                    "margin": "none"
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "HI, 我是郭永齊",
+                            "size": "XL",
+                            "weight": "bold",
+                            "color": "#0099ff",
+                            "offsetBottom": "xs"
+                        },
+                        {
+                            "type": "text",
+                            "text": "左眼視力300 右眼視力550",
+                            "gravity": "bottom",
+                            "size": "sm",
+                            "offsetTop": "xs"
+                        },
+                        {
+                            "type": "text",
+                            "text": "喜歡嘗試各種東西",
+                            "size": "sm",
+                            "margin": "none",
+                            "gravity": "top",
+                            "offsetTop": "xs"
+                        },
+                        {
+                            "type": "text",
+                            "text": "志向為保持帥哥",
+                            "size": "sm",
+                            "margin": "none",
+                            "gravity": "top",
+                            "offsetTop": "xs"
+                        },
+                        {
+                            "type": "text",
+                            "text": "請多指教！",
+                            "size": "sm",
+                            "margin": "none",
+                            "offsetTop": "xs"
+                        }
+                    ]
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "action": {
+                                "type": "postback",
+                                "label": "來來來，哩line",
+                                "data": "hi"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

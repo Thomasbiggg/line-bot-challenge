@@ -1,0 +1,216 @@
+{
+    "to": "U535c5da65995e2753c448f7191ea27ba",
+    "messages": [
+        {
+            "type": "flex",
+            "altText": "profile",
+            "contents": {
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://imgur.com/I4Yfge9.jpeg",
+            "size": "5xl",
+            "aspectMode": "cover",
+            "aspectRatio": "150:196",
+            "gravity": "center",
+            "flex": 1
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "image",
+                "size": "full",
+                "aspectMode": "cover",
+                "aspectRatio": "150:98",
+                "gravity": "center",
+                "url": "https://imgur.com/1GEkhvO.jpeg"
+              },
+              {
+                "type": "image",
+                "url": "https://imgur.com/G7wtUOQ.jpeg",
+                "size": "full",
+                "aspectMode": "cover",
+                "aspectRatio": "150:98",
+                "gravity": "center"
+              }
+            ],
+            "flex": 1
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://imgur.com/kmeuq9J.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "3:2"
+          }
+        ],
+        "paddingAll": "0px"
+      },
+      {
+        "type": "spacer",
+        "size": "xs"
+      }
+    ],
+    "paddingAll": "0px"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "帥度。",
+        "align": "center"
+      },
+      {
+        "type": "separator",
+        "margin": "5px"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "spacer",
+            "size": "xl"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "1"
+              },
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                "margin": "none",
+                "offsetEnd": "25px",
+                "offsetTop": "2.5px"
+              }
+            ],
+            "action": {
+              "type": "postback",
+              "label": "action",
+              "data": "1hobby",
+              "displayText": "1星1億ㄏㄏ"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "2"
+              },
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                "offsetTop": "2.5px",
+                "offsetEnd": "25px"
+              }
+            ],
+            "action": {
+              "type": "postback",
+              "label": "action",
+              "data": "2hobby",
+              "displayText": "聖人無2心，我是剩人"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "3"
+              },
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                "offsetTop": "2.5px",
+                "offsetEnd": "25px"
+              }
+            ],
+            "action": {
+              "type": "postback",
+              "label": "action",
+              "data": "3hobby",
+              "displayText": "3星2億ㄏㄏ"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "4"
+              },
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                "offsetTop": "2.5px",
+                "offsetEnd": "25px"
+              }
+            ],
+            "action": {
+              "type": "postback",
+              "label": "action",
+              "data": "4hobby",
+              "displayText": "四星good"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "5"
+              },
+              {
+                "type": "icon",
+                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                "offsetTop": "2.5px",
+                "offsetEnd": "25px"
+              }
+            ],
+            "action": {
+              "type": "postback",
+              "data": "5hobby",
+              "displayText": "5星吹吹吹！"
+            }
+          }
+        ],
+        "paddingTop": "10px"
+      }
+    ]
+  },
+  "styles": {
+    "footer": {
+      "separator": false
+    }
+  }
+}
+        }
+    ]
+}

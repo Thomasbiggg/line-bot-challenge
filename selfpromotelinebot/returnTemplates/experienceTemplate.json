@@ -1,0 +1,122 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "size": "full",
+    "aspectMode": "cover",
+    "aspectRatio": "320:213"
+  },
+  "body": {
+    "type": "box",
+    "layout": "horizontal",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "1"
+          },
+          {
+            "type": "icon",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+            "margin": "none",
+            "offsetEnd": "25px",
+            "offsetTop": "2.5px"
+          }
+        ],
+        "action": {
+          "type": "postback",
+          "label": "action",
+          "data": "1"
+        }
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "2"
+          },
+          {
+            "type": "icon",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+            "offsetTop": "2.5px",
+            "offsetEnd": "25px"
+          }
+        ],
+        "action": {
+          "type": "postback",
+          "label": "action",
+          "data": "2"
+        }
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "3"
+          },
+          {
+            "type": "icon",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+            "offsetTop": "2.5px",
+            "offsetEnd": "25px"
+          }
+        ],
+        "action": {
+          "type": "postback",
+          "label": "action",
+          "data": "3"
+        }
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "4"
+          },
+          {
+            "type": "icon",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+            "offsetTop": "2.5px",
+            "offsetEnd": "25px"
+          }
+        ],
+        "action": {
+          "type": "postback",
+          "label": "action",
+          "data": "4"
+        }
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "5"
+          },
+          {
+            "type": "icon",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+            "offsetTop": "2.5px",
+            "offsetEnd": "25px"
+          }
+        ],
+        "action": {
+          "type": "postback",
+          "data": "5",
+          "displayText": "5星吹吹吹！"
+        }
+      }
+    ]
+  }
+}

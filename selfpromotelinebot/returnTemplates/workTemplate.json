@@ -1,0 +1,209 @@
+{
+    "to": "U535c5da65995e2753c448f7191ea27ba",
+    "messages": [
+        {
+            "type": "flex",
+            "altText": "profile",
+            "contents": {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "icon",
+                                    "url": "https://imgur.com/bCsgw86.png"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "產學合作-產學研發中心計畫",
+                                    "size": "md",
+                                    "contents": [],
+                                    "offsetBottom": "2px",
+                                    "offsetStart": "2px"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "管理決策系統、預測系統、預警系統...",
+                                    "size": "xs",
+                                    "offsetStart": "18.5px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "工作內容",
+                                    "size": "xs",
+                                    "offsetStart": "15px",
+                                    "weight": "bold",
+                                    "margin": "5px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "- 設計資料庫 / 前端呈現",
+                                    "size": "xs",
+                                    "offsetStart": "18px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "- 建立php, django RESTful API",
+                                    "size": "xs",
+                                    "offsetStart": "18px"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "帥度。",
+                            "align": "center"
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "5px"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {
+                                    "type": "spacer",
+                                    "size": "xl"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "1"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "margin": "none",
+                                            "offsetEnd": "25px",
+                                            "offsetTop": "2.5px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "1work",
+                                        "displayText": "1星1億ㄏㄏ"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "2"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "offsetTop": "2.5px",
+                                            "offsetEnd": "25px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "2work",
+                                        "displayText": "聖人無2心，我是剩人"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "3"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "offsetTop": "2.5px",
+                                            "offsetEnd": "25px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "3work",
+                                        "displayText": "3星2億ㄏㄏ"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "4"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "offsetTop": "2.5px",
+                                            "offsetEnd": "25px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "4work",
+                                        "displayText": "四星good"
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "5"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                            "offsetTop": "2.5px",
+                                            "offsetEnd": "25px"
+                                        }
+                                    ],
+                                    "action": {
+                                        "type": "postback",
+                                        "data": "5work",
+                                        "displayText": "5星吹吹吹！"
+                                    }
+                                }
+                            ],
+                            "paddingTop": "10px"
+                        }
+                    ]
+                },
+                "styles": {
+                    "footer": {
+                        "separator": false
+                    }
+                }
+            }
+        }
+    ]
+}

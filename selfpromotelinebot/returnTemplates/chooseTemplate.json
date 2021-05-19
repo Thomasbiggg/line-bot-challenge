@@ -1,0 +1,220 @@
+{
+    "to": "U535c5da65995e2753c448f7191ea27ba",
+    "messages": [
+        {
+            "type": "flex",
+            "altText": "profile",
+            "contents": {
+                "type": "carousel",
+                "contents": [
+                    {
+                        "type": "bubble",
+                        "size": "micro",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://imgur.com/KsSXJcv.jpeg",
+                            "size": "full",
+                            "aspectMode": "cover",
+                            "aspectRatio": "320:213"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "工作經驗",
+                                    "weight": "bold",
+                                    "size": "sm",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                        {
+                                            "type": "box",
+                                            "layout": "baseline",
+                                            "spacing": "sm",
+                                            "contents": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "2021.1 - 2021.7",
+                                                    "wrap": true,
+                                                    "color": "#8c8c8c",
+                                                    "size": "xxs",
+                                                    "flex": 5
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "spacing": "sm",
+                            "paddingAll": "13px"
+                        },
+                        "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "workExp"
+                        }
+                    },
+                    {
+                        "type": "bubble",
+                        "size": "micro",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://imgur.com/Y2MnT6B.jpeg",
+                            "size": "full",
+                            "aspectMode": "cover",
+                            "aspectRatio": "320:213"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "競賽經驗",
+                                    "weight": "bold",
+                                    "size": "sm",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                        {
+                                            "type": "box",
+                                            "layout": "baseline",
+                                            "spacing": "sm",
+                                            "contents": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "2020.12",
+                                                    "wrap": true,
+                                                    "color": "#8c8c8c",
+                                                    "size": "xs",
+                                                    "flex": 5
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "spacing": "sm",
+                            "paddingAll": "13px"
+                        },
+                        "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "competitionExp"
+                        }
+                    },
+                    {
+                        "type": "bubble",
+                        "size": "micro",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://imgur.com/ufCpbQI.jpeg",
+                            "size": "full",
+                            "aspectMode": "cover",
+                            "aspectRatio": "320:213"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "社團經驗",
+                                    "weight": "bold",
+                                    "size": "sm"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                        {
+                                            "type": "box",
+                                            "layout": "baseline",
+                                            "spacing": "sm",
+                                            "contents": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "2020.9-2021.1",
+                                                    "wrap": true,
+                                                    "color": "#8c8c8c",
+                                                    "size": "xs",
+                                                    "flex": 5
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "spacing": "sm",
+                            "paddingAll": "13px"
+                        },
+                        "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "extracurricularExp"
+                        }
+                    },
+                    {
+                        "type": "bubble",
+                        "size": "micro",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://imgur.com/4V9VdZ9.jpeg",
+                            "size": "full",
+                            "aspectMode": "cover",
+                            "aspectRatio": "320:213"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "興趣",
+                                    "weight": "bold",
+                                    "size": "sm"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                        {
+                                            "type": "box",
+                                            "layout": "baseline",
+                                            "spacing": "sm",
+                                            "contents": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "2000.2 - present",
+                                                    "wrap": true,
+                                                    "color": "#8c8c8c",
+                                                    "size": "xs",
+                                                    "flex": 5
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "spacing": "sm",
+                            "paddingAll": "13px"
+                        },
+                        "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "hobby"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
