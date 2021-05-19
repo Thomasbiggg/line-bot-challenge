@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-6rnzlml8*ys1gmm7#q0ey!@g1(_ie$&zexxvv6@yb#gatgcv2e
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'linebotchallenge.herokuapp.com', #允許的網域名稱
+    '32e6ab80d1ff.ngrok.io', #允許的網域名稱
 ]
 
 

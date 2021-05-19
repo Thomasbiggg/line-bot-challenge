@@ -9,7 +9,6 @@ from linebot.models import *
 
 import json
 import http.client
-import httplib2
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -169,15 +168,6 @@ def callback(request):
                             postbackArr.append('extracurricular')
                             postbackArr.append('hobby')
 
-
-        # else:
-        #     body = json.load(open('selfpromotelinebot/returnTemplates/degreeTemplate.json', encoding='utf-8'))
-        #     # blockNum = len(body['messages'][0]['contents'][4]['contents'])
-        #     # for i in range(blockNum):
-        #     #     body['messages'][0]['contents'][4]['contents'][i]['contents'][1]['text'] = "☆"+
-        #     connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-        #     response = connection.getresponse()
-        #     print(response.read().decode())
         return HttpResponse()
     else:
         return HttpResponseBadRequest()
