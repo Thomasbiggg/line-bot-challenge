@@ -47,16 +47,16 @@ def callback(request):
             return HttpResponseBadRequest()
 
         for event in events:
+
             if isinstance(event, MessageEvent):
                 message = event.message.text
                 if message == 'hi':
                     # 顯示來來來哩來
-
-
                     body = json.load(open('selfpromotelinebot/returnTemplates/selfIntroduceTemplate.json', encoding='utf-8'))
                     connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                     response = connection.getresponse()
                     print(response.read().decode())
+
             elif isinstance(event, PostbackEvent):
                 data = event.postback.data
                 reply_token = event.reply_token
@@ -152,7 +152,7 @@ def callback(request):
                     # carousel
                     body = chooseFlexMessage
 
-                    if responseCategory not in postbackArr:
+                    if scoreDic[responseCategory] != 0:
                         text_message = TextSendMessage(text='給過帥度了噢！')
                         line_bot_api.reply_message(reply_token, text_message)
 
