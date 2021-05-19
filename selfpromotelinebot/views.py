@@ -152,7 +152,7 @@ def callback(request):
                     # carousel
                     body = chooseFlexMessage
 
-                    if scoreDic[responseCategory] != 0:
+                    if scoreDic[responseCategory] > 0:
                         text_message = TextSendMessage(text='給過帥度了噢！')
                         line_bot_api.reply_message(reply_token, text_message)
 
@@ -162,7 +162,7 @@ def callback(request):
                     else:
                         scoreDic[responseCategory] = int(data[0])
                         postbackArr.remove(responseCategory)
-                        if len(postbackArr) == 0:
+                        if len(postbackArr) == 0 and all([x > 0 for x in scoreDic.values()]):
                             scoreArr = [x for x in scoreDic.values()]
                             totalScore = sum(scoreArr)
                             global count
@@ -176,6 +176,7 @@ def callback(request):
                             connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
+
                             postbackArr.append('work')
                             postbackArr.append('competition')
                             postbackArr.append('extracurricular')
