@@ -134,9 +134,15 @@ def callback(request):
 
                     # hobbyFlexMessage = json.load(open('selfpromotelinebot/returnTemplates/hobbyTemplate.json', encoding='utf-8'))
                     # line_bot_api.reply_message(reply_token, FlexSendMessage('hobby', contents=hobbyFlexMessage))
+                # 選擇帥度
                 elif isinstance(int(data[0]), int):
+
+                    # 工作/競賽/社團/興趣
                     responseCategory = data[1:]
+
+                    # carousel
                     body = chooseFlexMessage
+
                     if responseCategory not in postbackArr:
                         text_message = TextSendMessage(text='給過帥度了噢！')
                         line_bot_api.reply_message(reply_token, text_message)
@@ -147,19 +153,20 @@ def callback(request):
                     else:
                         scoreDic[responseCategory] = int(data[0])
                         postbackArr.remove(responseCategory)
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                        response = connection.getresponse()
-                        print(response.read().decode())
                         if len(postbackArr) == 0:
                             scoreArr = [x for x in scoreDic.values()]
                             totalScore = sum(scoreArr)
                             global count
-                            count+=1
-                            body = json.load(open('selfpromotelinebot/returnTemplates/degreeTemplate.json', encoding='utf-8'))
+                            count += 1
+                            body = json.load(
+                                open('selfpromotelinebot/returnTemplates/degreeTemplate.json', encoding='utf-8'))
                             for i in range(4):
-                                body['messages'][0]['contents']['body']['contents'][4]['contents'][i]['contents'][1]['text'] = "☆ "+str(scoreArr[i])
-                            body['messages'][0]['contents']['body']['contents'][4]['contents'][5]['contents'][1]['text'] = "☆ "+str(totalScore)
-                            body['messages'][0]['contents']['body']['contents'][6]['contents'][1]['text'] = "# "+str(count)
+                                body['messages'][0]['contents']['body']['contents'][4]['contents'][i]['contents'][1][
+                                    'text'] = "☆ " + str(scoreArr[i])
+                            body['messages'][0]['contents']['body']['contents'][4]['contents'][5]['contents'][1][
+                                'text'] = "☆ " + str(totalScore)
+                            body['messages'][0]['contents']['body']['contents'][6]['contents'][1]['text'] = "# " + str(
+                                count)
                             connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
@@ -167,6 +174,11 @@ def callback(request):
                             postbackArr.append('competition')
                             postbackArr.append('extracurricular')
                             postbackArr.append('hobby')
+                        else:
+                            connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
+                            response = connection.getresponse()
+                            print(response.read().decode())
+
 
         return HttpResponse()
     else:
