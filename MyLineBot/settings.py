@@ -25,10 +25,15 @@ SECRET_KEY = 'django-insecure-6rnzlml8*ys1gmm7#q0ey!@g1(_ie$&zexxvv6@yb#gatgcv2e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '32e6ab80d1ff.ngrok.io', #允許的網域名稱
-]
+# test
+# ALLOWED_HOSTS = [
+#     '32e6ab80d1ff.ngrok.io', #允許的網域名稱
+# ]
 
+# heroku
+ALLOWED_HOSTS = [
+    'linebotchallenge.herokuapp.com', #允許的網域名稱
+]
 
 # Application definition
 
