@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-6rnzlml8*ys1gmm7#q0ey!@g1(_ie$&zexxvv6@yb#gatgcv2e'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -132,9 +133,13 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# bobi
+# LINE_CHANNEL_ACCESS_TOKEN = '1VgBCdRa3TyfPx5OBwrRjuiPXK7LWCPv0s7BX5S7idxa8854ELfwoKn6VHshxgAKjan+can6+A0q6Wz4BBgvtjOrIpfLJ0lrOyF4tvBOicMxgwtaclG+7YlgVhXeyh8cGdUWsDnptCRUWa1JwgwnywdB04t89/1O/w1cDnyilFU='
+# LINE_CHANNEL_SECRET = 'b501d0f45de043473a9d0be6968d3742'
 
-LINE_CHANNEL_ACCESS_TOKEN = '1VgBCdRa3TyfPx5OBwrRjuiPXK7LWCPv0s7BX5S7idxa8854ELfwoKn6VHshxgAKjan+can6+A0q6Wz4BBgvtjOrIpfLJ0lrOyF4tvBOicMxgwtaclG+7YlgVhXeyh8cGdUWsDnptCRUWa1JwgwnywdB04t89/1O/w1cDnyilFU='
-LINE_CHANNEL_SECRET = 'b501d0f45de043473a9d0be6968d3742'
+# test
+LINE_CHANNEL_ACCESS_TOKEN = '/sZCPcz0jlqC4zuFfS9wZfu2QmxuzQ84vihUMfnN6ezpZS+eMM2+WYUzzL2pxpRl6BQovQ0zRA1QPlQbsL65h/dsdgmVPMkKJ4TK+08mz6yDkIE0wi+GqqL+Pcv8d+Ssd8bZ2oRCbpQlYsJuhqLHBgdB04t89/1O/w1cDnyilFU='
+LINE_CHANNEL_SECRET = '740a4d3d75483bef5303513c2599ae10'
 
 import os
 

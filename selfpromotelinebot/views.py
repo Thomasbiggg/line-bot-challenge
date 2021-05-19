@@ -10,6 +10,7 @@ from linebot.models import *
 import json
 import http.client
 import ssl
+
 ssl._create_default_https_context = ssl._create_unverified_context
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
@@ -18,16 +19,21 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 connection = http.client.HTTPSConnection('api.line.me')
 headers = {}
 # Add Authorization field
-headers['Authorization'] = 'Bearer ' + '1VgBCdRa3TyfPx5OBwrRjuiPXK7LWCPv0s7BX5S7idxa8854ELfwoKn6VHshxgAKjan+can6+A0q6Wz4BBgvtjOrIpfLJ0lrOyF4tvBOicMxgwtaclG+7YlgVhXeyh8cGdUWsDnptCRUWa1JwgwnywdB04t89/1O/w1cDnyilFU='
+headers['Authorization'] = 'Bearer ' + '/sZCPcz0jlqC4zuFfS9wZfu2QmxuzQ84vihUMfnN6ezpZS+eMM2+WYUzzL2pxpRl6BQovQ0zRA1QPlQbsL65h/dsdgmVPMkKJ4TK+08mz6yDkIE0wi+GqqL+Pcv8d+Ssd8bZ2oRCbpQlYsJuhqLHBgdB04t89/1O/w1cDnyilFU='
 headers['Content-Type'] = 'application/json'
 
 postbackArr = ['work', 'competition', 'extracurricular', 'hobby']
-scoreDic = {'work':0, 'competition':0, 'extracurricular':0, 'hobby':0}
+scoreDic = {'work': 0, 'competition': 0, 'extracurricular': 0, 'hobby': 0}
+
 chooseFlexMessage = json.load(open('selfpromotelinebot/returnTemplates/chooseTemplate.json', encoding='utf-8'))
 # print(chooseFlexMessage['messages'][0]['contents']['contents'][1]['body']['contents'][0]['text'])
 count = 0
 @csrf_exempt
 def callback(request):
+
+    global scoreDic
+    global postbackArr
+
     if request.method == 'POST':
 
         signature = request.META['HTTP_X_LINE_SIGNATURE']
@@ -45,6 +51,8 @@ def callback(request):
                 message = event.message.text
                 if message == 'hi':
                     # 顯示來來來哩來
+
+
                     body = json.load(open('selfpromotelinebot/returnTemplates/selfIntroduceTemplate.json', encoding='utf-8'))
                     connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                     response = connection.getresponse()
@@ -134,6 +142,7 @@ def callback(request):
 
                     # hobbyFlexMessage = json.load(open('selfpromotelinebot/returnTemplates/hobbyTemplate.json', encoding='utf-8'))
                     # line_bot_api.reply_message(reply_token, FlexSendMessage('hobby', contents=hobbyFlexMessage))
+
                 # 選擇帥度
                 elif isinstance(int(data[0]), int):
 
@@ -161,12 +170,9 @@ def callback(request):
                             body = json.load(
                                 open('selfpromotelinebot/returnTemplates/degreeTemplate.json', encoding='utf-8'))
                             for i in range(4):
-                                body['messages'][0]['contents']['body']['contents'][4]['contents'][i]['contents'][1][
-                                    'text'] = "☆ " + str(scoreArr[i])
-                            body['messages'][0]['contents']['body']['contents'][4]['contents'][5]['contents'][1][
-                                'text'] = "☆ " + str(totalScore)
-                            body['messages'][0]['contents']['body']['contents'][6]['contents'][1]['text'] = "# " + str(
-                                count)
+                                body['messages'][0]['contents']['body']['contents'][4]['contents'][i]['contents'][1]['text'] = "☆ " + str(scoreArr[i])
+                            body['messages'][0]['contents']['body']['contents'][4]['contents'][5]['contents'][1]['text'] = "☆ " + str(totalScore)
+                            body['messages'][0]['contents']['body']['contents'][6]['contents'][1]['text'] = "# " + str(count)
                             connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
