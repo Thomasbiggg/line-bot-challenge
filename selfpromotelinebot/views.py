@@ -52,7 +52,8 @@ def callback(request):
             print(event)
             reply_token = event.reply_token
             to = event.source.user_id
-
+            chooseFlexMessage['replyToken'] = reply_token
+            chooseFlexMessage['to'] = to
             # 介紹頁面
             if isinstance(event, MessageEvent):
                 message = event.message.text
@@ -106,8 +107,6 @@ def callback(request):
                             line_bot_api.reply_message(reply_token, text_message)
 
                             body = chooseFlexMessage
-                            body['replyToken'] = reply_token
-                            body['to'] = to
                             connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
@@ -124,8 +123,6 @@ def callback(request):
                         print(response.read().decode())
                     print(scoreDic)
                     print(postbackArr)
-                    # hobbyFlexMessage = json.load(open('selfpromotelinebot/returnTemplates/hobbyTemplate.json', encoding='utf-8'))
-                    # line_bot_api.reply_message(reply_token, FlexSendMessage('hobby', contents=hobbyFlexMessage))
 
                 # 選擇帥度
                 elif isinstance(int(data[0]), int):
@@ -133,17 +130,12 @@ def callback(request):
                     # 工作/競賽/社團/興趣
                     responseCategory = data[1:]
 
-                    # carousel
-                    body = chooseFlexMessage
-
                     # 用來判斷該項是否選過帥度
                     if scoreDic[responseCategory] > 0:
                         text_message = TextSendMessage(text='給過帥度了噢！')
                         line_bot_api.reply_message(reply_token, text_message)
 
-                        body['replyToken'] = reply_token
-                        body['to'] = to
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
+                        connection.request('POST', '/v2/bot/message/push', json.dumps(chooseFlexMessage), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
 
@@ -177,12 +169,20 @@ def callback(request):
                             scoreDic['competition'] = 0
                             scoreDic['extracurricular'] = 0
                             scoreDic['hobby'] = 0
+
+                            chooseFlexMessage = json.load(open('selfpromotelinebot/returnTemplates/chooseTemplate.json', encoding='utf-8'))
+
                         else:
-                            body['replyToken'] = reply_token
-                            body['to'] = to
-                            connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
+                            blockNum = len(chooseFlexMessage['messages'][0]['contents']['contents'])
+
+                            for i in range(blockNum):
+                                if chooseFlexMessage['messages'][0]['contents']['contents'][i]['action']['data'] == responseCategory:
+                                    chooseFlexMessage['messages'][0]['contents']['contents'].pop(i)
+                                    break
+                            connection.request('POST', '/v2/bot/message/push', json.dumps(chooseFlexMessage), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
+
                     print(scoreDic)
                     print(postbackArr)
         return HttpResponse()
