@@ -19,7 +19,7 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 connection = http.client.HTTPSConnection('api.line.me')
 headers = {}
 # Add Authorization field
-headers['Authorization'] = 'Bearer ' + '/sZCPcz0jlqC4zuFfS9wZfu2QmxuzQ84vihUMfnN6ezpZS+eMM2+WYUzzL2pxpRl6BQovQ0zRA1QPlQbsL65h/dsdgmVPMkKJ4TK+08mz6yDkIE0wi+GqqL+Pcv8d+Ssd8bZ2oRCbpQlYsJuhqLHBgdB04t89/1O/w1cDnyilFU='
+headers['Authorization'] = 'Bearer ' + 'v5kVND99fRnqjF3kM/BC/GAV0oK+8eIxtHbl5Sj7LaDcaSyvA2V7RVffwZlXHtv+PhHV9SEbr1e7JhPqe0fBj2UeZm5gBHTDcYuVfh5SAgG7HfUMB72tKX2Zekyt8Yaq+Dn5Yb4/k+j25qHHRBM7FwdB04t89/1O/w1cDnyilFU='
 headers['Content-Type'] = 'application/json'
 
 postbackArr = ['work', 'competition', 'extracurricular', 'hobby']
