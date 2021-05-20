@@ -79,6 +79,7 @@ def callback(request):
                     connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                     response = connection.getresponse()
                     print(response.read().decode())
+                    return HttpResponse()
 
                 # 頁面選擇
                 if data == 'work' or data == 'competition' or data == 'extracurricular' or data == 'hobby':
@@ -86,6 +87,7 @@ def callback(request):
                     # 評分json檔
                     jsonStr = 'selfpromotelinebot/returnTemplates/' + data + 'Template.json'
 
+                    # 點過項目
                     if data not in postbackArr:
 
                         # 判斷是否評分
@@ -182,8 +184,11 @@ def callback(request):
                             response = connection.getresponse()
                             print(response.read().decode())
 
-                    print(scoreDic)
-                    print(postbackArr)
+                            print(scoreDic)
+                            print(postbackArr)
+                else:
+                    return HttpResponse()
+
         return HttpResponse()
     else:
         return HttpResponseBadRequest()
