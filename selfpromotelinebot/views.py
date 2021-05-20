@@ -33,6 +33,8 @@ def callback(request):
 
     global scoreDic
     global postbackArr
+    global count
+    global chooseFlexMessage
 
     if request.method == 'POST':
 
@@ -47,22 +49,29 @@ def callback(request):
             return HttpResponseBadRequest()
 
         for event in events:
+            print(event)
+            reply_token = event.reply_token
+            to = event.source.user_id
             if isinstance(event, MessageEvent):
                 message = event.message.text
+
                 if message == 'hi':
                     # 顯示來來來哩來
                     body = json.load(open('selfpromotelinebot/returnTemplates/selfIntroduceTemplate.json', encoding='utf-8'))
+                    body['replyToken'] = reply_token
+                    body['to'] = to
                     connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                     response = connection.getresponse()
                     print(response.read().decode())
 
             elif isinstance(event, PostbackEvent):
                 data = event.postback.data
-                reply_token = event.reply_token
 
                 # 點擊來來來按鈕後的carousel
                 if data == 'hi':
                     body = json.load(open('selfpromotelinebot/returnTemplates/chooseTemplate.json', encoding='utf-8'))
+                    body['replyToken'] = reply_token
+                    body['to'] = to
                     connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                     response = connection.getresponse()
                     print(response.read().decode())
@@ -76,11 +85,15 @@ def callback(request):
                         line_bot_api.reply_message(reply_token, text_message)
 
                         body = chooseFlexMessage
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
                     else:
                         body = json.load(open('selfpromotelinebot/returnTemplates/workTemplate.json', encoding='utf-8'))
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
@@ -95,11 +108,15 @@ def callback(request):
                         line_bot_api.reply_message(reply_token, text_message)
 
                         body = chooseFlexMessage
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
                     else:
                         body = json.load(open('selfpromotelinebot/returnTemplates/competitionTemplate.json', encoding='utf-8'))
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
@@ -113,11 +130,15 @@ def callback(request):
                         line_bot_api.reply_message(reply_token, text_message)
 
                         body = chooseFlexMessage
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
                     else:
                         body = json.load(open('selfpromotelinebot/returnTemplates/extracurricularTemplate.json', encoding='utf-8'))
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
@@ -132,11 +153,15 @@ def callback(request):
                         line_bot_api.reply_message(reply_token, text_message)
 
                         body = chooseFlexMessage
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
                     else:
                         body = json.load(open('selfpromotelinebot/returnTemplates/hobbyTemplate.json', encoding='utf-8'))
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
@@ -159,18 +184,18 @@ def callback(request):
                         text_message = TextSendMessage(text='給過帥度了噢！')
                         line_bot_api.reply_message(reply_token, text_message)
 
+                        body['replyToken'] = reply_token
+                        body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
                     else:
                         scoreDic[responseCategory] = int(data[0])
-                        postbackArr.remove(responseCategory)
 
                         # 用來判斷是否選完帥度
                         if len(postbackArr) == 0 and all([x > 0 for x in scoreDic.values()]):
                             scoreArr = [x for x in scoreDic.values()]
                             totalScore = sum(scoreArr)
-                            global count
                             count += 1
                             body = json.load(
                                 open('selfpromotelinebot/returnTemplates/degreeTemplate.json', encoding='utf-8'))
@@ -178,6 +203,8 @@ def callback(request):
                                 body['messages'][0]['contents']['body']['contents'][4]['contents'][i]['contents'][1]['text'] = "☆ " + str(scoreArr[i])
                             body['messages'][0]['contents']['body']['contents'][4]['contents'][5]['contents'][1]['text'] = "☆ " + str(totalScore)
                             body['messages'][0]['contents']['body']['contents'][6]['contents'][1]['text'] = "# " + str(count)
+                            body['replyToken'] = reply_token
+                            body['to'] = to
                             connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
@@ -191,6 +218,8 @@ def callback(request):
                             scoreDic['extracurricular'] = 0
                             scoreDic['hobby'] = 0
                         else:
+                            body['replyToken'] = reply_token
+                            body['to'] = to
                             connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
