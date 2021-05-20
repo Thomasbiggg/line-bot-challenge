@@ -56,16 +56,25 @@ def callback(request):
             chooseFlexMessage['to'] = to
             # 介紹頁面
             if isinstance(event, MessageEvent):
-                message = event.message.text
 
-                if message == 'hi':
-                    # 顯示來來來哩來
-                    body = json.load(open('selfpromotelinebot/returnTemplates/selfIntroduceTemplate.json', encoding='utf-8'))
-                    body['replyToken'] = reply_token
-                    body['to'] = to
-                    connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                    response = connection.getresponse()
-                    print(response.read().decode())
+                type = event.message.type
+
+                if type != 'text':
+                    text_message = TextSendMessage(text='抱歉。輸入hi才會理你。')
+                    line_bot_api.reply_message(reply_token, text_message)
+
+                else:
+                    if event.message.text == 'hi':
+                        # 顯示來來來哩來
+                        body = json.load(open('selfpromotelinebot/returnTemplates/selfIntroduceTemplate.json', encoding='utf-8'))
+                        body['replyToken'] = reply_token
+                        body['to'] = to
+                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
+                        response = connection.getresponse()
+                        print(response.read().decode())
+                    else:
+                        text_message = TextSendMessage(text='抱歉。輸入hi才會理你。')
+                        line_bot_api.reply_message(reply_token, text_message)
 
             elif isinstance(event, PostbackEvent):
 
@@ -186,8 +195,6 @@ def callback(request):
 
                             print(scoreDic)
                             print(postbackArr)
-                else:
-                    return HttpResponse()
 
         return HttpResponse()
     else:
