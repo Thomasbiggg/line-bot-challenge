@@ -106,8 +106,7 @@ def callback(request):
                             text_message = TextSendMessage(text='給過帥度了噢！')
                             line_bot_api.reply_message(reply_token, text_message)
 
-                            body = chooseFlexMessage
-                            connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
+                            connection.request('POST', '/v2/bot/message/push', json.dumps(chooseFlexMessage), headers)
                             response = connection.getresponse()
                             print(response.read().decode())
 
