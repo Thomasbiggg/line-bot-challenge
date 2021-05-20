@@ -52,6 +52,8 @@ def callback(request):
             print(event)
             reply_token = event.reply_token
             to = event.source.user_id
+
+            # 介紹頁面
             if isinstance(event, MessageEvent):
                 message = event.message.text
 
@@ -65,6 +67,7 @@ def callback(request):
                     print(response.read().decode())
 
             elif isinstance(event, PostbackEvent):
+
                 data = event.postback.data
 
                 # 點擊來來來按鈕後的carousel
@@ -76,90 +79,44 @@ def callback(request):
                     response = connection.getresponse()
                     print(response.read().decode())
 
-                    # line_bot_api.reply_message(reply_token, FlexSendMessage('來來來哩來', contents=chooseFlexMessage))
+                # 頁面選擇
+                if data == 'work' or data == 'competition' or data == 'extracurricular' or data == 'hobby':
 
-                # 點擊工作經驗
-                elif data == 'workExp':
-                    if 'work' not in postbackArr:
-                        text_message = TextSendMessage(text='給過帥度了噢！')
-                        line_bot_api.reply_message(reply_token, text_message)
+                    # 評分json檔
+                    jsonStr = 'selfpromotelinebot/returnTemplates/' + data + 'Template.json'
 
-                        body = chooseFlexMessage
-                        body['replyToken'] = reply_token
-                        body['to'] = to
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                        response = connection.getresponse()
-                        print(response.read().decode())
+                    if data not in postbackArr:
+
+                        # 判斷是否評分
+                        if scoreDic[data] == 0:
+                            text_message = TextSendMessage(text='要先選帥度噢！')
+                            line_bot_api.reply_message(reply_token, text_message)
+
+                            # 跳出帥度選擇頁面
+                            body = json.load(open(jsonStr, encoding='utf-8'))
+                            body['replyToken'] = reply_token
+                            body['to'] = to
+                            connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
+                            response = connection.getresponse()
+                            print(response.read().decode())
+
+                        # 已經點過項目
+                        else:
+                            text_message = TextSendMessage(text='給過帥度了噢！')
+                            line_bot_api.reply_message(reply_token, text_message)
+
+                            body = chooseFlexMessage
+                            body['replyToken'] = reply_token
+                            body['to'] = to
+                            connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
+                            response = connection.getresponse()
+                            print(response.read().decode())
+
+                    # 都沒有選過
                     else:
-                        body = json.load(open('selfpromotelinebot/returnTemplates/workTemplate.json', encoding='utf-8'))
-                        body['replyToken'] = reply_token
-                        body['to'] = to
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                        response = connection.getresponse()
-                        print(response.read().decode())
+                        postbackArr.remove(data)
 
-                    # line_bot_api.reply_message(reply_token, FlexSendMessage('work', contents=workFlexMessage))
-                    print(scoreDic)
-                    print(postbackArr)
-                # 點擊競賽經驗
-                elif data == 'competitionExp':
-                    if 'competition' not in postbackArr:
-                        text_message = TextSendMessage(text='給過帥度了噢！')
-                        line_bot_api.reply_message(reply_token, text_message)
-
-                        body = chooseFlexMessage
-                        body['replyToken'] = reply_token
-                        body['to'] = to
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                        response = connection.getresponse()
-                        print(response.read().decode())
-                    else:
-                        body = json.load(open('selfpromotelinebot/returnTemplates/competitionTemplate.json', encoding='utf-8'))
-                        body['replyToken'] = reply_token
-                        body['to'] = to
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                        response = connection.getresponse()
-                        print(response.read().decode())
-                    print(scoreDic)
-                    print(postbackArr)
-
-                # 點擊社團經驗
-                elif data == 'extracurricularExp':
-                    if 'extracurricular' not in postbackArr:
-                        text_message = TextSendMessage(text='給過帥度了噢！')
-                        line_bot_api.reply_message(reply_token, text_message)
-
-                        body = chooseFlexMessage
-                        body['replyToken'] = reply_token
-                        body['to'] = to
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                        response = connection.getresponse()
-                        print(response.read().decode())
-                    else:
-                        body = json.load(open('selfpromotelinebot/returnTemplates/extracurricularTemplate.json', encoding='utf-8'))
-                        body['replyToken'] = reply_token
-                        body['to'] = to
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                        response = connection.getresponse()
-                        print(response.read().decode())
-                    print(scoreDic)
-                    print(postbackArr)
-                    # line_bot_api.reply_message(reply_token, FlexSendMessage('extracurricular', contents=extracurricularFlexMessage))
-
-                # 點擊興趣
-                elif data == 'hobby':
-                    if 'hobby' not in postbackArr:
-                        text_message = TextSendMessage(text='給過帥度了噢！')
-                        line_bot_api.reply_message(reply_token, text_message)
-
-                        body = chooseFlexMessage
-                        body['replyToken'] = reply_token
-                        body['to'] = to
-                        connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
-                        response = connection.getresponse()
-                        print(response.read().decode())
-                    else:
-                        body = json.load(open('selfpromotelinebot/returnTemplates/hobbyTemplate.json', encoding='utf-8'))
+                        body = json.load(open(jsonStr, encoding='utf-8'))
                         body['replyToken'] = reply_token
                         body['to'] = to
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
@@ -189,16 +146,18 @@ def callback(request):
                         connection.request('POST', '/v2/bot/message/push', json.dumps(body), headers)
                         response = connection.getresponse()
                         print(response.read().decode())
+
+                    # 還沒選過帥度
                     else:
                         scoreDic[responseCategory] = int(data[0])
+                        # postbackArr.remove(responseCategory)
 
-                        # 用來判斷是否選完帥度
+                        # 用來判斷是否選完所有帥度
                         if len(postbackArr) == 0 and all([x > 0 for x in scoreDic.values()]):
                             scoreArr = [x for x in scoreDic.values()]
                             totalScore = sum(scoreArr)
                             count += 1
-                            body = json.load(
-                                open('selfpromotelinebot/returnTemplates/degreeTemplate.json', encoding='utf-8'))
+                            body = json.load(open('selfpromotelinebot/returnTemplates/degreeTemplate.json', encoding='utf-8'))
                             for i in range(4):
                                 body['messages'][0]['contents']['body']['contents'][4]['contents'][i]['contents'][1]['text'] = "☆ " + str(scoreArr[i])
                             body['messages'][0]['contents']['body']['contents'][4]['contents'][5]['contents'][1]['text'] = "☆ " + str(totalScore)
@@ -209,6 +168,7 @@ def callback(request):
                             response = connection.getresponse()
                             print(response.read().decode())
 
+                            # 刷新紀錄，準備下一份成績單安
                             postbackArr.append('work')
                             postbackArr.append('competition')
                             postbackArr.append('extracurricular')
@@ -225,7 +185,6 @@ def callback(request):
                             print(response.read().decode())
                     print(scoreDic)
                     print(postbackArr)
-
         return HttpResponse()
     else:
         return HttpResponseBadRequest()

@@ -57,7 +57,7 @@
                         "action": {
                             "type": "postback",
                             "label": "action",
-                            "data": "workExp"
+                            "data": "work"
                         }
                     },
                     {
@@ -109,7 +109,7 @@
                         "action": {
                             "type": "postback",
                             "label": "action",
-                            "data": "competitionExp"
+                            "data": "competition"
                         }
                     },
                     {
@@ -160,7 +160,7 @@
                         "action": {
                             "type": "postback",
                             "label": "action",
-                            "data": "extracurricularExp"
+                            "data": "extracurricular"
                         }
                     },
                     {
