@@ -170,6 +170,9 @@ def callback(request):
                             response = connection.getresponse()
                             print(response.read().decode())
 
+                            text_message = TextSendMessage(text='謝謝你～輸入hi再來一次')
+                            line_bot_api.reply_message(reply_token, text_message)
+
                             # 刷新紀錄，準備下一份成績單安
                             postbackArr.append('work')
                             postbackArr.append('competition')
@@ -181,6 +184,7 @@ def callback(request):
                             scoreDic['hobby'] = 0
 
                             chooseFlexMessage = json.load(open('selfpromotelinebot/returnTemplates/chooseTemplate.json', encoding='utf-8'))
+
 
                         else:
                             blockNum = len(chooseFlexMessage['messages'][0]['contents']['contents'])
